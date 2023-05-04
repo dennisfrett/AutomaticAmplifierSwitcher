@@ -91,9 +91,6 @@ void WaitForTurnOff(){
 }
 
 void loop() {
-  // Serial.println(digitalRead(BUTTON_PIN));
-  // return;
-
   static bool isOn = false;
   if(!isOn){
     WaitForTurnOn();
@@ -101,7 +98,7 @@ void loop() {
     digitalWrite(LED_PIN, HIGH);
 
 #ifdef DEBUG
-  //  Serial.println("Music started");
+    Serial.println("Music started");
 #endif
 
   } else {
@@ -111,7 +108,7 @@ void loop() {
     digitalWrite(LED_PIN, LOW);
 
 #ifdef DEBUG
-    //Serial.println("Music stopped");
+    Serial.println("Music stopped");
 #endif
   }
 
